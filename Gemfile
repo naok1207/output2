@@ -29,6 +29,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'annotate'
 gem 'html2slim'
 gem 'rails-i18n'
+gem 'redis-rails'
 gem 'slim-rails'
 
 group :development, :test do
