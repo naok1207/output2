@@ -9,6 +9,7 @@ import "channels"
 
 import 'bootstrap-material-design'
 import '../stylesheets/application'
+import "@fortawesome/fontawesome-free/css/all"
 window.$ = require('jquery')
 
 Rails.start()
