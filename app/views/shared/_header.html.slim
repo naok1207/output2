@@ -3,4 +3,7 @@ nav.navbar.navbar-expand.shadow-none.border-bottom
     .d-flex.justify-content-end.w-100
       ul.navbar-nav
         li.nav-item
-          = link_to 'リンク', '#', class: 'nav-link'
+          - if logged_in?
+            = link_to 'Log out', logout_path, method: :delete, class: 'nav-link'
+          - else
+            = link_to 'Log in', login_path, class: 'nav-link'
