@@ -1,0 +1,25 @@
+h1.text-center.mb-3 = 'Sign up'
+= form_with model: @user, local: true do |f|
+  = render 'shared/error_messages', object: @user
+  .form-group
+    i.fas.fa-user.fa-fw.prefix.mr-1
+    = f.label :username
+    = f.text_field :username, class: 'form-control', placeholder: "Name"
+  .form-group
+    i.fas.fa-envelope.fa-fw.prefix.mr-1
+    = f.label :email
+    = f.text_field :email, class: 'form-control', placeholder: "Email"
+  .form-group
+    i.fas.fa-lock.fa-fw.prefix.mr-1
+    = f.label :password
+    = f.password_field :password, class: 'form-control', placeholder: "Password"
+  .form-group
+    i.fas.fa-lock.fa-fw.prefix.mr-1
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation, class: 'form-control', placeholder: "Password Confirmation"
+  = button_tag type: 'submit', class: 'btn btn-raised btn-primary w-100 mt-2 mb-2' do
+    i.fas.fa-fa-user.fa-fw.prefix.mr-1
+    | Sign up
+  
+  - if !logged_in?
+    = link_to 'Log in?', login_path, class: 'text-muted'

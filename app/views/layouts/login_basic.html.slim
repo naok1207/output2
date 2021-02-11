@@ -2,12 +2,18 @@ doctype html
 html
   head
     title
-      | Output2
+      | Output
     meta[name="viewport" content="width=device-width,initial-scale=1"]
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_pack_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
   body
-    = render "shared/header"
-    = yield
+    .wrapper
+      .d-flex.align-items-center.vh-100
+        .container
+          .row.justify-content-center
+            .col-md-6
+              .card.p-5.mb-5
+                .card-body
+                  = yield
