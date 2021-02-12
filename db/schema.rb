@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_133259) do
+ActiveRecord::Schema.define(version: 2021_02_12_061315) do
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "username", null: false
@@ -32,5 +32,15 @@ ActiveRecord::Schema.define(version: 2021_02_11_133259) do
     t.index ["user_id"], name: "index_word_books_on_user_id"
   end
 
+  create_table "words", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "word"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_words_on_user_id"
+  end
+
   add_foreign_key "word_books", "users"
+  add_foreign_key "words", "users"
 end
