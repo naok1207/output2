@@ -25,4 +25,5 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   has_many :word_books
+  has_many :words
 end

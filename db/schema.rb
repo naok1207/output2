@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_02_12_061522) do
 
   create_table "word_books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "title"
+    t.string "title", null: false
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 2021_02_12_061522) do
 
   create_table "words", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "word"
-    t.text "description"
+    t.string "word", null: false
+    t.text "description", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_words_on_user_id"

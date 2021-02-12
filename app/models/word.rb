@@ -3,8 +3,8 @@
 # Table name: words
 #
 #  id          :bigint           not null, primary key
-#  description :text(65535)
-#  word        :string(255)
+#  description :text(65535)      not null
+#  word        :string(255)      not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  user_id     :bigint           not null
@@ -19,4 +19,7 @@
 #
 class Word < ApplicationRecord
   belongs_to :user
+
+  validates :word, presence: true
+  validates :description, presence: true
 end
