@@ -6,5 +6,6 @@
           h5.card-title= @word_book.title
           p.card-text= @word_book.description
           .text-right
+            = link_to '単語を確認する', word_book_words_path(@word_book), class: 'btn btn-raised btn-secondary mr-1'
             = link_to '削除', word_book_path(@word_book), method: :delete, class: 'btn btn-raised btn-danger mr-1', data: { confirm: '本当に削除しますか？' }
             = link_to '編集', edit_word_book_path(@word_book), class: 'btn btn-raised btn-primary'

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[ new create ]
   resources :words
-  resources :word_books
+  resources :word_books do
+    resources :words, controller: 'word_books/words', only: %i[ index create destroy ]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

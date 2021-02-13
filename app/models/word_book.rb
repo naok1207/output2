@@ -19,6 +19,16 @@
 #
 class WordBook < ApplicationRecord
   belongs_to :user
+  has_many :word_relations, dependent: :destroy
+  has_many :words, through: :word_relations, source: :word
 
   validates :title, presence: true
+
+  def add_word(word)
+    words << word
+  end
+
+  def del_word(word)
+    words.destroy(word)
+  end
 end

@@ -19,6 +19,8 @@
 #
 class Word < ApplicationRecord
   belongs_to :user
+  has_many :word_relations, dependent: :destroy
+  has_many :word_books, through: :word_relations, source: :word_book
 
   validates :word, presence: true
   validates :description, presence: true

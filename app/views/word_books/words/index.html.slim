@@ -1,0 +1,27 @@
+.d-flex.mt-3.justify-content-between
+  h2 単語帳 単語一覧
+  a#word_edit_event
+   .btn.btn-raised.btn-primary 編集
+   .btn.btn-raised.btn-danger.d-none 編集完了
+  h2= @word_book.title 
+= form_with model: @word, url: word_book_words_path, local: false do |f|
+  table.table
+    thead
+      tr
+        th scope="col"
+          | 単語
+        th scope="col"
+          | 説明
+    tbody#word_area
+      = render @words, word_book: @word_book
+      tr.d-none#word_form
+        td
+          = f.text_field :word, class: 'form-control'
+        td
+          = f.text_field :description, class: 'form-control'
+  .text-right.d-none#word_form_btn
+    = f.submit '追加', class: "btn btn-raised btn-primary"
+.text-right
+  a.bg-primary.rounded-circle#word_form_event href='#'
+    i.fas.fa-plus.fa-fw.prefix.text-white
+    i.fas.fa-minus.fa-fw.prefix.text-white.d-none
