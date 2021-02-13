@@ -14,3 +14,6 @@ window.$ = require('jquery')
 
 Rails.start()
 ActiveStorage.start()
+
+import './data-link'
+import './word_form'

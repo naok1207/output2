@@ -1,0 +1,2 @@
+class WordRelationsController < ApplicationController
+end

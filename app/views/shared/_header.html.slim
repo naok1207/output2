@@ -1,9 +1,8 @@
 nav.navbar.navbar-expand.shadow-none.border-bottom
-  .container-fluid
-    .d-flex.justify-content-end.w-100
-      ul.navbar-nav
-        li.nav-item
-          - if logged_in?
-            = link_to 'Log out', logout_path, method: :delete, class: 'nav-link'
-          - else
-            = link_to 'Log in', login_path, class: 'nav-link'
+  .navbar-nav.ml-auto
+    - if logged_in?
+      = link_to '単語一覧', words_path, class: 'nav-item nav-link'
+      = link_to '単語帳一覧', word_books_path, class: 'nav-item nav-link'
+      = link_to 'Log out', logout_path, method: :delete, class: 'nav-item nav-link'
+    - else
+      = link_to 'Log in', login_path, class: 'nav-item nav-link'

@@ -1,0 +1,10 @@
+= form_with model: @word_book, local: true do |f|
+  = render 'shared/error_messages', object: @word_book
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control', placeholder: "タイトル"
+  .form-group
+    = f.label :description
+    = f.text_area :description, size: "20x10", class: 'form-control', placeholder: "詳細"
+  .text-right
+    = f.submit yield(:submit_text), class: "btn btn-raised btn-primary"

@@ -1,0 +1,6 @@
+tr id="word_#{word.id}"
+  td
+    = link_to word_book_word_path(word_book, word), method: :delete, remote: true, class: 'rounded-circle bg-danger mr-1 d-none word_edit', data: { confirm: "この単語帳から#{word.word}を削除しますか？" } do
+      i.fas.fa-minus.fa-fw.prefix.text-white
+    = word.word
+  td= word.description

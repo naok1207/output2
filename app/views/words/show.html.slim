@@ -1,0 +1,10 @@
+.container
+  .row.justify-content-center
+    .col-md-6
+      .card.p-5.mb-5.mt-5
+        .card-body
+          h5.card-title= @word.word
+          p.card-text= @word.description
+          .text-right
+            = link_to '削除', word_path(@word), method: :delete, class: 'btn btn-raised btn-danger mr-1', data: { confirm: '本当に削除しますか？' }
+            = link_to '編集', edit_word_path(@word), class: 'btn btn-raised btn-primary'

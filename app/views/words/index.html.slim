@@ -1,0 +1,13 @@
+.d-flex.mt-3.justify-content-between
+  h2 単語一覧
+  = link_to '新規作成', new_word_path, class: 'btn btn-raised btn-primary'
+table.table.table-hover
+  thead
+    tr
+      th scope="col"
+        | 単語
+      th scope="col"
+        | 説明
+  tbody
+    = render @words
+      
